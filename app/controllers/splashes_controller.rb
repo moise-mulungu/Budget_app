@@ -1,5 +1,6 @@
 class SplashesController < ApplicationController
   before_action :set_splash, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /splashes or /splashes.json
   def index

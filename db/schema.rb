@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_01_162240) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_01_190958) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "homes", force: :cascade do |t|
+  create_table "splashes", force: :cascade do |t|
     t.string "index"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
