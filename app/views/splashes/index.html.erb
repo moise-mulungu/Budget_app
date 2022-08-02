@@ -1,14 +1,3 @@
-<p style="color: green"><%= notice %></p>
+<%= button_to "Log in", new_user_session_path, method: :get %>
 
-<h1>Splashes</h1>
-
-<div id="splashes">
-  <% @splashes.each do |splash| %>
-    <%= render splash %>
-    <p>
-      <%= link_to "Show this splash", splash %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New splash", new_splash_path %>
+<%= button_to "Sign up", new_user_registration_path, method: :get %>
