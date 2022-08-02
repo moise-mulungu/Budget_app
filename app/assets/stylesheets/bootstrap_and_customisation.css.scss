@@ -1,0 +1,23 @@
+body {
+    background: url('manc_clouds.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    line-height: 1.5;
+    color: white;
+}
+.container {
+    width: 350px;
+    margin: 100px auto;
+    padding: 20px;
+    background: black;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 40px;
+    text-align: center;
+}
+
+h1 { 
+    font-family: ‘Helvetica Neue’, Helvetica; 
+    font-weight: 100;
+    font-size: 60px;
+}
