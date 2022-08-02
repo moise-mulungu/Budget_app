@@ -1,0 +1,2 @@
+class RemoveColumnUserIdToGroup < ApplicationRecord
+end
