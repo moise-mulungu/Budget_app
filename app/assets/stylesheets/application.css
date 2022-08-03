@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    background: url('manc_clouds.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    line-height: 1.5;
+    color: white;
+}
