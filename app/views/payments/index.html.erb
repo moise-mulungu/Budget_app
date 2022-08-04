@@ -1,4 +1,9 @@
-<p style="color: green"><%= notice %></p>
+<div class="login-page">
+  <h2 class="login-title">Payments</h2>
+  <div class="actions login-button" >
+    <%= link_to "Log out", destroy_user_session_path %>
+  </div>
+  <p style="color: green"><%= notice %></p>
 
 <h1>Payments</h1>
 
@@ -11,4 +16,4 @@
   <% end %>
 </div>
 
-<%= link_to "New payment", new_payment_path, class: "btn btn-primary" %>
+<%= link_to "New payment", new_payment_path, :class => "new-category" %>
