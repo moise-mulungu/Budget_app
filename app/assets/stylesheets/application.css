@@ -13,11 +13,11 @@
  *= require_tree .
  *= require_self
  */
- body {
-    background: url('manc_clouds.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    line-height: 1.5;
-    color: white;
-}
+ input#user_email,
+  input[type='submit'],
+  input[type='text'],
+  input#user_password_confirmation,
+  input#user_password {
+    padding: 10px;
+    margin: 20px 0;
+  }
