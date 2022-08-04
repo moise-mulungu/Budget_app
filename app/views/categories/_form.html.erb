@@ -1,3 +1,13 @@
+<div class="login-page">
+<%= link_to image_tag("back1.png", :class => "back-button" ), categories_path %>
+  <h2 class="login-title">Categories</h2>
+  <div class="actions login-button" >
+  <%= link_to "Log out", destroy_user_session_path %>
+  </div>
+  <h1>New category</h1>
+  
+
+
 <%= form_with(model: category) do |form| %>
   <% if category.errors.any? %>
     <div style="color: red">
@@ -25,3 +35,4 @@
     <%= form.submit class:"btn btn-primary"%>
   </div>
 <% end %>
+</div>

@@ -1,8 +1,12 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Categories</h1>
-
-<div id="categories">
+<div class="login-page">
+  <%= link_to "", root_path %>
+  <h2 class="login-title">Categories</h2>
+  <div class="actions login-button" >
+  <%= link_to "Log out", destroy_user_session_path %>
+  </div>
+  <p style="color: green"><%= notice %></p>
+  
+  <div class="category-list">
   <% @categories.each do |category| %>
     <%= render category %>
     <p>
@@ -11,4 +15,5 @@
   <% end %>
 </div>
 
-<%= link_to "New category", new_category_path, class: "btn btn-primary" %>
+<%= link_to "New category", new_category_path, :class => "new-category" %>
+</div>

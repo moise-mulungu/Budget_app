@@ -38,6 +38,7 @@
     display: flex;
     flex-flow: column;
     align-items: space-between;
+    position: relative;
 }
 
 .new_user input{
@@ -59,15 +60,16 @@
 
 .login-button {
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 80%;
+    color: white;
 
 }
 
 .login-button > * {
     background-color: transparent;
     border: none;
-    color: blue;
+    color: white;
 }
 
 .back-button {
@@ -75,4 +77,5 @@
     height: 25px;
     position: absolute;
     left: 10px;
+    top: 20px;
 }

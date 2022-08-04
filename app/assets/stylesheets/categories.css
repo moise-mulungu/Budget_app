@@ -1,4 +1,4 @@
-.category-container {
+/* .category-container {
     margin: 20px 10px;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -11,7 +11,34 @@
     justify-content: center;
     align-items: center;
 }
+  */
 
+  .category-list {
+    position: relative;
+    display: flex;
 
-  
-  
+  }
+
+  .new-category {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #18a02a;
+    color: white;
+    transition: 0.5s ease-in-out;
+  }
+
+  .new-category:hover {
+    color: #0f7f00;
+    background-color: white;
+    border: 1px solid #0f7f00;
+
+  }
+
+  .new-category:active {
+    background-color: #18a02a;
+    color: white;
+  }
