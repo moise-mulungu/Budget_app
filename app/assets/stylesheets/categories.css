@@ -1,0 +1,10 @@
+.category-container {
+    margin: 20px 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border: 2px solid var(--main);
+    text-decoration: none;
+  }
+
+  
+  

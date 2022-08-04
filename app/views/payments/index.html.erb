@@ -6,9 +6,9 @@
   <% @payments.each do |payment| %>
     <%= render payment %>
     <p>
-      <%= link_to "Show this payment", payment %>
+      <%= link_to "Show this payment", payment, class: "btn btn-primary"%>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New payment", new_payment_path %>
+<%= link_to "New payment", new_payment_path, class: "btn btn-primary" %>
