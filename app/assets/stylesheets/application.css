@@ -13,11 +13,17 @@
  *= require_tree .
  *= require_self
  */
- input#user_email,
-  input[type='submit'],
-  input[type='text'],
-  input#user_password_confirmation,
-  input#user_password {
-    padding: 10px;
-    margin: 20px 0;
+ @media only screen and (min-width: 480px) and (max-width: 768px) {
+  body {
+    background: blueviolet;
   }
+
+   input#user_email,
+    input[type='submit'],
+    input[type='text'],
+    input#user_password_confirmation,
+    input#user_password {
+      padding: 10px;
+      margin: 20px 0;
+    }
+ }
