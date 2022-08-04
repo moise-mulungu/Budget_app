@@ -17,11 +17,11 @@
       <%= render 'layouts/navigation_bar' %>
     <% end %>
     <div class= "alert-notice">
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% elsif alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% elsif %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
     </div>
     <div>
       <%= yield %>
