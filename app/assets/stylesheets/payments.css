@@ -11,3 +11,11 @@
     flex-direction: column;
     row-gap: 20px;
   }
+
+  .link-payments {
+    position: absolute;
+    top: 20px;
+    right: 80%;
+    color: white;
+    text-decoration: none;
+  }

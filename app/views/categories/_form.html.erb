@@ -3,7 +3,9 @@
   <h2 class="login-title">Categories</h2>
   <div class="actions login-button" >
   <%= link_to "Log out", destroy_user_session_path %>
+
   </div>
+  
   <h1>New category</h1>
   
 
@@ -21,18 +23,15 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="input">
+    <%= form.text_field :name, placeholder: "Name" %>
   </div>
-
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
+  <div class="input">
+    <%= form.text_field :icon, placeholder: "Icon" %>
   </div>
-
   <div>
     <%= form.submit class:"btn btn-primary"%>
   </div>
+
 <% end %>
 </div>

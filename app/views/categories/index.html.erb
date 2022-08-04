@@ -1,9 +1,9 @@
 <div class="login-page">
-  <%= link_to "", root_path %>
   <h2 class="login-title">Categories</h2>
   <div class="actions login-button" >
-  <%= link_to "Log out", destroy_user_session_path %>
+    <%= link_to "Log out", destroy_user_session_path %>
   </div>
+  <%= link_to "Payments", payments_path, :class => "link-payments"%>
   <p style="color: green"><%= notice %></p>
   
   <div class="category-list">
