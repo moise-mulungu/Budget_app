@@ -13,17 +13,16 @@
  *= require_tree .
  *= require_self
  */
- @media only screen and (min-width: 480px) and (max-width: 768px) {
-  body {
-    background: blueviolet;
+body {
+  margin: 0;
+  padding: 0;
+}
+.alert-notice {
+  position: absolute;
+  bottom: 3rem;
+  width: 40%;
+  left: 1rem;
+  height: 50px;
+  background-color: #00b300;
+  color: white;
   }
-
-   input#user_email,
-    input[type='submit'],
-    input[type='text'],
-    input#user_password_confirmation,
-    input#user_password {
-      padding: 10px;
-      margin: 20px 0;
-    }
- }
