@@ -5,6 +5,12 @@
     border: 2px solid var(--main);
     text-decoration: none;
   }
+  .category-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
   
   
