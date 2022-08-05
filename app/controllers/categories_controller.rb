@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# Service to download ftp files from the server
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
 

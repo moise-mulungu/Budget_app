@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# Service to download ftp files from the server
 class PaymentsController < ApplicationController
   before_action :set_payment, only: %i[show edit update destroy]
 

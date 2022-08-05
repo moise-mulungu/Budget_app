@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# Service to download ftp files from the server
 class SplashesController < ApplicationController
   # GET /splashes or /splashes.json
   def index
