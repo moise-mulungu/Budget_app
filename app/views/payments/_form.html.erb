@@ -1,5 +1,5 @@
 
-<%= form_with(model: payment, url: category_payments_path(@category) ) do |form| %>
+<%= form_with(model: payment, :class => "category-form", url: category_payments_path(@category) ) do |form| %>
   <% if payment.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
@@ -12,19 +12,19 @@
     </div>
   <% end %>
 
-  <div class="input">
+  <div class="">
     <%= form.text_field :name, placeholder: "Name" %>
   </div>
 
-  <div class="input">
+  <div class="">
     <%= form.text_field :amount, placeholder: "Amount" %>
   </div>
 
-  <div>
+  <div class="select-form">
     <%= form.collection_select :category_id, current_user.categories, :id, :name, prompt: true %>
   </div>
 
-  <div>
-    <%= form.submit class:"btn btn-primary"%>
+  <div class="button-form">
+    <%= form.submit :save%>
   </div>
 <% end %>

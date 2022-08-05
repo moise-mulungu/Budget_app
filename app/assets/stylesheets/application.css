@@ -27,8 +27,8 @@ body {
 .alert-notice > *{
   
   height: 50px;
-  background-color: #00b300;
-  color: white;
+  background-color: #caebe7;
+  color: rgb(14, 173, 54);
 }
 .header {
   background-color: #04356d;
