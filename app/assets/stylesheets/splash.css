@@ -38,7 +38,6 @@
   width: 100vw;
   display: flex;
   flex-flow: column;
-  align-items: space-around;
   position: relative;
 }
 
@@ -54,16 +53,16 @@
 }
 
 input#user_email,
-  input[type='submit'],
-  input[type='text'],
-  input#user_password_confirmation,
-  input#user_password {
-    padding: 10px 0;
+input[type='submit'],
+input[type='text'],
+input#user_password_confirmation,
+input#user_password {
+  padding: 10px 0;
 }
 
 .login-button {
   position: absolute;
-  top: 20px;
+  top: 10px;
   left: 80%;
   color: white;
 }

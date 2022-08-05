@@ -17,6 +17,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .alert-notice {
   position: absolute;
   bottom: 3rem;
@@ -24,12 +25,12 @@ body {
   left: 1rem;
 }
 
-.alert-notice > *{
-  
+.alert-notice > * {
   height: 50px;
   background-color: #caebe7;
   color: rgb(14, 173, 54);
 }
+
 .header {
   background-color: #04356d;
   padding: 12px 0;
@@ -42,16 +43,17 @@ body {
   color: white;
   margin: 0 10px;
 }
+
 .nav-logout {
   color: white;
   text-decoration: none;
-  
 }
 
 .nav-title {
   margin: 0;
   padding: 0;
 }
+
 .nav-title h2 {
   text-align: center;
 }

@@ -6,6 +6,7 @@
   padding: 10px;
   gap: 8px;
 }
+
 .category-name {
   align-self: flex-start;
   font-size: 1.5em;
@@ -60,7 +61,6 @@
   border: none;
   border-radius: 5px;
   font-weight: bold;
-
 }
 
 .category-container a {
@@ -88,14 +88,13 @@
 .category-form input {
   width: 100%;
   padding: 10px;
-
 }
 
 .button-form {
   width: 30%;
   margin: 10px auto 0;
-
 }
+
 .button-form > * {
   background-color: #3778c2;
   color: white;
