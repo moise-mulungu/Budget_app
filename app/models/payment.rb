@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Payment < ApplicationRecord
   belongs_to :user
   belongs_to :category
@@ -6,5 +8,4 @@ class Payment < ApplicationRecord
   validates :category_id, presence: true
   validates :user_id, presence: true
   validates :name, presence: true
-
 end
