@@ -1,0 +1,21 @@
+<div class= "login-page">
+  <%= link_to image_tag("back1.png", :class => "back-button" ), root_path %>
+  <h2 class="login-title">Log in</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.email_field :email,  placeholder: "Email", autofocus: true, autocomplete: "email" %>
+      </div>
+      
+    <div class="field">
+      <%= f.password_field :password, placeholder: "Password", autocomplete: "current-password" %>
+    </div>
+
+    <div class="actions login-button" >
+      <%= f.submit "Log in" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+</div>

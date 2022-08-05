@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="navbar">
+  <p></p>
+  <h2 class="nav-title">Categories</h2>
+
+  <%= link_to "Log out", destroy_user_session_path, :class => "nav-logout" %>
+  </div>
+</header>
+ 
+  <div class="category-list">
+    <% @categories.each do |category| %>
+      <%= render category %>
+    <% end %>
+
+    <%= link_to "New category", new_category_path, :class => "new-category" %>
+  </div>

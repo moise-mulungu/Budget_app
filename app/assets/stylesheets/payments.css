@@ -1,0 +1,30 @@
+.payment-section {
+  height: 100vh;
+  background-color: #e4e4e7;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 8px;
+}
+
+.payment-container {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  align-items: center;
+  padding: 8px;
+}
+
+.payment-container > * {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.select-form {
+  padding: 10px;
+  border-radius: 5px;
+  border: transparent;
+  color: #e4e4e7;
+}

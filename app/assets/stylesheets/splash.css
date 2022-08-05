@@ -1,0 +1,83 @@
+.container-one {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.container-one h1 {
+  font-size: 3em;
+  color: #3778c2;
+}
+
+.button-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 10px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.link {
+  width: 100%;
+  flex: 1;
+  border-radius: 2px;
+  padding: 10px;
+  background-color: #3778c2;
+  color: white;
+  border: transparent;
+  font-weight: bold;
+}
+
+.login-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+
+.new_user input {
+  width: 100%;
+}
+
+.login-title {
+  text-align: center;
+  background-color: #04356d;
+  color: white;
+  padding: 20px;
+}
+
+input#user_email,
+input[type='submit'],
+input[type='text'],
+input#user_password_confirmation,
+input#user_password {
+  padding: 10px 0;
+}
+
+.login-button {
+  position: absolute;
+  top: 10px;
+  left: 80%;
+  color: white;
+}
+
+.login-button > * {
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-decoration: none;
+}
+
+.back-button {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 10px;
+  top: 20px;
+}
