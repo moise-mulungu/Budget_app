@@ -1,21 +1,22 @@
 .payment-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.form-card {
-    margin: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-  }
 
-  .link-payments {
-    position: absolute;
-    top: 20px;
-    right: 80%;
-    color: white;
-    text-decoration: none;
-  }
+.form-card {
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.link-payments {
+  position: absolute;
+  top: 25px;
+  right: 80%;
+  color: white;
+  text-decoration: none;
+}
