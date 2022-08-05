@@ -62,12 +62,4 @@ RSpec.describe 'Payment', type: :request do
     payment.category_id = 2
     expect(payment).to_not be_valid
   end
-  it 'should get all payments' do
-    get '/payments'
-    expect(response).to have_http_status(:ok)
-  end
-  it 'should get a payment' do
-    get "/payments/#{payment.id}"
-    expect(response).to have_http_status(:ok)
-  end
 end

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Category', type: :request do
   category = Category.new(user_id: 1, name: 'Category', icon: 'icon')
   category.save
-  user = User.new(email: 'moise@gmail.com', password: '123456')
+  user = User.new(name: 'Moise', email: 'moise@gmail.com', password: '123456')
   user.save
 
   it 'is valid with valid attributes' do
