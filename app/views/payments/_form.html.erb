@@ -1,11 +1,5 @@
-<div class="login-page">
-<%= link_to image_tag("back1.png", :class => "back-button" ), payments_path %>
-  <h2 class="login-title">Payments</h2>
-  <div class="actions login-button" >
-  <%= link_to "Log out", destroy_user_session_path %>
-  </div>
-  <h1>New Payment</h1>
-<%= form_with(model: payment) do |form| %>
+
+<%= form_with(model: payment, url: category_payments_path(@category) ) do |form| %>
   <% if payment.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
@@ -34,4 +28,3 @@
     <%= form.submit class:"btn btn-primary"%>
   </div>
 <% end %>
-</div>

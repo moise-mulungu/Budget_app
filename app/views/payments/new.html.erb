@@ -1,7 +1,9 @@
-<%= render "form", payment: @payment %>
 
-<br>
-
-<div>
-  <%= link_to "Back to payments", payments_path %>
+<div class="login-page">
+  <%= link_to image_tag("back1.png", :class => "back-button"), categories_path %>
+  <h2 class="login-title">New Payments</h2>
+  <div class="actions login-button" >
+  <%= link_to "Log out", destroy_user_session_path %>
 </div>
+
+<%= render "form", payment: @payment %>

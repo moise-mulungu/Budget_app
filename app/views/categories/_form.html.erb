@@ -1,16 +1,14 @@
-<div class="login-page">
-<%= link_to image_tag("back1.png", :class => "back-button" ), categories_path %>
-  <h2 class="login-title">Categories</h2>
-  <div class="actions login-button" >
-  <%= link_to "Log out", destroy_user_session_path %>
+<header class="header">
+<div class="navbar">
+<%= link_to image_tag("back1.png", :class => "nav-back-button" ), categories_path %>
+  <h2 class="nav-title">New Category</h2>
 
+  <%= link_to "Log out", destroy_user_session_path, :class => "nav-logout" %>
   </div>
-  
-  <h1>New category</h1>
-  
+</header> 
 
 
-<%= form_with(model: category) do |form| %>
+<%= form_with(model: category, :class => "category-form") do |form| %>
   <% if category.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
@@ -23,14 +21,14 @@
     </div>
   <% end %>
 
-  <div class="input">
+  <div class="">
     <%= form.text_field :name, placeholder: "Name" %>
   </div>
-  <div class="input">
+  <div class="">
     <%= form.text_field :icon, placeholder: "Icon" %>
   </div>
-  <div>
-    <%= form.submit class:"btn btn-primary"%>
+  <div class="button-form">
+    <%= form.submit :save %>
   </div>
 
 <% end %>

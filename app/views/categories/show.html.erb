@@ -1,10 +1,19 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @category %>
+<header class="header">
+<div class="navbar">
+<%= link_to image_tag("back1.png", :class => "nav-back-button" ), categories_path %>
+  <h2 class="nav-title">Payments</h2>
 
-<div class="category-links">
-  <%= link_to "Edit this category", edit_category_path(@category), class: "btn btn-primary" %> |
-  <%= link_to "Back to categories", categories_path, class: "btn btn-primary" %> |
-
-  <%= button_to "Destroy this category", @category, method: :delete, class: "btn btn-primary" %>
-</div>
+  <%= link_to "Log out", destroy_user_session_path, :class => "nav-logout" %>
+  </div>
+</header>
+<% if @payments.exists? %>
+      <div class="payment-section">
+        <% @payments.each do |payment| %>
+          <%= render payment %>
+        <% end %>
+      </div>
+    <% else %>  
+       <h1>No Payments Available!</h1>
+    <% end %>
+<%= link_to "New payment", new_category_payment_path(@category), :class => "new-category" %>

@@ -1,17 +1,20 @@
 <div class="category-container">
-  <p class="category-list">
-    <strong>Name:</strong>
-    <%= category.name %>
-  </p>
+<%= link_to category do %>
+  <div class="icon-name">
 
-  <p class="category-list">
-    <strong>Icon:</strong>
-    <%= category.icon %>
-  </p>
+    <img src="<%= category.icon %>" alt="Category Icon" class="category-icon" />
+    <div>
+      <p class="category-name">
+        <%= category.name %>
+      </p>
+      <p class="category-total">
+        $
+        <%= category.payments.sum(:amount) %>
+      </p>
+    </div>
 
-  <p class="category-list">
-    <strong>User:</strong>
-    <%= category.user_id %>
-  </p>
+  </div>
+   <% end %> 
+  <%= button_to "Delete", category, method: :delete %>
 
 </div>

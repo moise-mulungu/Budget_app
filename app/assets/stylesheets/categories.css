@@ -1,6 +1,15 @@
 .category-list {
-  position: relative;
   display: flex;
+  flex-flow: column;
+  background-color: #e4e4e7;
+  height: 100vh;
+  padding: 10px;
+  gap: 8px;
+}
+.category-name {
+  align-self: flex-start;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .new-category {
@@ -16,6 +25,10 @@
   text-decoration: none;
 }
 
+.category-total {
+  margin: 0;
+}
+
 .new-category:hover {
   color: #0f7f00;
   background-color: white;
@@ -29,4 +42,64 @@
 
 .input {
   padding: 20px;
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.category-container button {
+  background-color: #dc2626;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+
+}
+
+.category-container a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.icon-name {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.category-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.category-form {
+  display: flex;
+  flex-flow: column;
+}
+
+.category-form input {
+  width: 100%;
+  padding: 10px;
+
+}
+
+.button-form {
+  width: 30%;
+  margin: 10px auto 0;
+
+}
+.button-form > * {
+  background-color: #3778c2;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
 }
