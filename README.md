@@ -11,7 +11,7 @@ Budget-App is about building a mobile web application where you can manage your 
 - [loom link ](https://www.loom.com/share/ad83678bc40c4a3382b01bf818d55a55)
 
 # Live Demo
-  - [budget-app](https://bush-budget.herokuapp.com/)
+  - [budget-app](https://moisebudgetapp.herokuapp.com/)
 
 # Screenshots
   <img src = "./app/assets/images/mobile (1).png" width ="200" /> <img src = "./app/assets/images/mobile (2).png width ="200" /> <img src = "./app/assets/images/mobile.png" width ="200" /> <img src = "./app/assets/images/mobile (5).png" width ="200" />
