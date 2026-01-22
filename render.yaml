@@ -1,8 +1,5 @@
 databases:
   - name: budget-postgres
-    engine: postgres
-    version: "15"
-    plan: free
 
 services:
   - type: web
