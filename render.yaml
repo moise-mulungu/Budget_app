@@ -6,7 +6,6 @@ services:
     name: budget-app
     env: ruby
     plan: free
-    runtime: ruby-3.2
     buildCommand: bundle install && bundle exec rake assets:precompile
     startCommand: bundle exec rake db:migrate && bundle exec puma -t 5:5 -p ${PORT:-3000}
     envVars:
