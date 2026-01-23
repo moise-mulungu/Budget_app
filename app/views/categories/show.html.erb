@@ -1,19 +1,58 @@
-
 <header class="header">
 <div class="navbar">
 <%= link_to image_tag("back1.png", :class => "nav-back-button" ), categories_path %>
-  <h2 class="nav-title">Payments</h2>
+  <h2 class="nav-title"><%= @category.name %></h2>
 
   <%= link_to "Log out", destroy_user_session_path, :class => "nav-logout" %>
   </div>
 </header>
-<% if @payments.exists? %>
-      <div class="payment-section">
-        <% @payments.each do |payment| %>
-          <%= render payment %>
-        <% end %>
+
+<div class="payment-section">
+  <!-- Budget Summary Card -->
+  <div class="budget-summary">
+    <div class="budget-header">
+      <h3>Budget Overview</h3>
+      <span class="total-spent"><%= number_to_currency(@category.amount_spent) %> spent</span>
+    </div>
+    
+    <% if @category.budget_limit.present? %>
+      <div class="budget-info">
+        <div class="budget-stat">
+          <label>Budget Limit:</label>
+          <span><%= number_to_currency(@category.budget_limit) %></span>
+        </div>
+        <div class="budget-stat">
+          <label>Remaining:</label>
+          <span class="<%= @category.budget_exceeded? ? 'exceeded' : 'available' %>">
+            <%= number_to_currency(@category.remaining_budget) %>
+          </span>
+        </div>
       </div>
-    <% else %>  
-       <h1>No Payments Available!</h1>
+      
+      <div class="budget-progress">
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: <%= [@category.budget_percentage, 100].min %>%"></div>
+        </div>
+        <p class="progress-text"><%= @category.budget_percentage %>% used</p>
+      </div>
+    <% else %>
+      <p class="no-budget">No budget limit set</p>
     <% end %>
+  </div>
+
+  <!-- Payments List -->
+  <% if @payments.exists? %>
+    <div class="payments-list">
+      <h3 style="margin-bottom: 12px; font-size: 1.125rem;">Recent Payments</h3>
+      <% @payments.each do |payment| %>
+        <%= render payment %>
+      <% end %>
+    </div>
+  <% else %>  
+    <div class="no-payments-message">
+      <p>No payments yet for this category</p>
+    </div>
+  <% end %>
+</div>
+
 <%= link_to "New payment", new_category_payment_path(@category), :class => "new-category" %>

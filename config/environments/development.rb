@@ -61,6 +61,18 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  # Use an in-memory cache for Sprockets in development to avoid Windows
+  # file-locking/atomic rename issues when writing to tmp/cache/assets.
+  begin
+    if defined?(Sprockets) && Sprockets.const_defined?(:Cache) && Sprockets::Cache.const_defined?(:MemoryStore)
+      config.assets.configure do |env|
+        env.cache = Sprockets::Cache::MemoryStore.new
+      end
+    end
+  rescue => e
+    Rails.logger.warn "Could not set Sprockets MemoryStore cache: #{e.message}"
+  end
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 

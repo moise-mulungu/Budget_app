@@ -1,16 +1,36 @@
 <header class="header">
   <div class="navbar">
   <p></p>
-  <h2 class="nav-title">Categories</h2>
+  <h2 class="nav-title">My Budget</h2>
 
   <%= link_to "Log out", destroy_user_session_path, :class => "nav-logout" %>
   </div>
 </header>
- 
-  <div class="category-list">
+
+<!-- Total Budget Summary -->
+<div class="budget-total-summary">
+  <div class="summary-card">
+    <div class="summary-stat">
+      <label>Total Spent:</label>
+      <span class="total-amount"><%= number_to_currency(@categories.map(&:amount_spent).sum) %></span>
+    </div>
+    <div class="summary-stat">
+      <label>Total Budget:</label>
+      <span><%= number_to_currency(@categories.map(&:budget_limit).compact.sum) %></span>
+    </div>
+  </div>
+</div>
+
+<div class="category-list">
+  <% if @categories.any? %>
     <% @categories.each do |category| %>
       <%= render category %>
     <% end %>
+  <% else %>
+    <div style="text-align: center; padding: 40px 20px; color: #6b7280;">
+      <p>No categories yet. Create your first one!</p>
+    </div>
+  <% end %>
 
-    <%= link_to "New category", new_category_path, :class => "new-category" %>
-  </div>
+  <%= link_to "New category", new_category_path, :class => "new-category" %>
+</div>

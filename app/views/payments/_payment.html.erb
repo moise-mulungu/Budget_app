@@ -1,10 +1,19 @@
 <div class="payment-container">
-  <p class="payment-name">
-    <%= payment.name %>
-  </p>
+  <div class="payment-info">
+    <p class="payment-name">
+      <%= payment.name %>
+    </p>
+    <p class="payment-date">
+      <%= payment.created_at.strftime("%b %d, %Y") %>
+    </p>
+  </div>
 
   <p class="payment-amount">
-    $<%= payment.amount %>
+    <%= number_to_currency(payment.amount) %>
   </p>
 
+  <div class="payment-actions">
+    <%= link_to "Edit", edit_category_payment_path(payment.category, payment), class: "btn-edit", title: "Edit this payment" %>
+    <%= button_to "Delete", category_payment_path(payment.category, payment), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-delete" %>
+  </div>
 </div>

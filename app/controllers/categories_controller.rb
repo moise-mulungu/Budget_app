@@ -1,6 +1,7 @@
 # Service to download ftp files from the server
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /categories or /categories.json
   def index
@@ -9,13 +10,12 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
-    @category = Category.find(params[:id])
-    @payments = @category.payments.order(created_at: :desc)
+    @payments = @category.payments.recent
   end
 
   # GET /categories/new
   def new
-    @category = Category.new
+    @category = current_user.categories.build
   end
 
   # GET /categories/1/edit
@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
-    @category = Category.new(category_params)
+    @category = current_user.categories.build(category_params)
 
     respond_to do |format|
       if @category.save
@@ -54,7 +54,7 @@ class CategoriesController < ApplicationController
     @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
+      format.html { redirect_to categories_url, notice: 'Category was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -64,12 +64,15 @@ class CategoriesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_category
     @category = Category.find(params[:id])
+    authorize_user!(@category.user)
+  end
+
+  def authorize_user!(resource_user)
+    redirect_to categories_path, alert: 'Not authorized' unless resource_user == current_user
   end
 
   # Only allow a list of trusted parameters through.
   def category_params
-    category = params.require(:category).permit(:name, :icon, :user_id)
-    category[:user_id] = current_user.id
-    category
+    params.require(:category).permit(:name, :icon, :budget_limit, :description)
   end
 end

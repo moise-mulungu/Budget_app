@@ -1,9 +1,16 @@
+<header class="header">
+<div class="navbar">
+<%= link_to image_tag("back1.png", :class => "nav-back-button" ), @category ? category_path(@category) : categories_path %>
+  <h2 class="nav-title"><%= payment.new_record? ? "New Payment" : "Edit Payment" %></h2>
 
-<%= form_with(model: payment, :class => "category-form", url: category_payments_path(@category) ) do |form| %>
+  <%= link_to "Log out", destroy_user_session_path, :class => "nav-logout" %>
+  </div>
+</header>
+
+<%= form_with(model: payment, :class => "payment-form", url: @category ? category_payments_path(@category) : payment_path(payment), method: @category ? :post : :patch) do |form| %>
   <% if payment.errors.any? %>
-    <div style="color: red">
+    <div class="error-messages">
       <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
-
       <ul>
         <% payment.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -12,19 +19,22 @@
     </div>
   <% end %>
 
-  <div class="">
-    <%= form.text_field :name, placeholder: "Name" %>
+  <div class="form-group">
+    <%= form.label :name, "Payment Description" %>
+    <%= form.text_field :name, placeholder: "e.g., Weekly groceries", required: true %>
   </div>
 
-  <div class="">
-    <%= form.text_field :amount, placeholder: "Amount" %>
+  <div class="form-group">
+    <%= form.label :amount, "Amount ($)" %>
+    <%= form.number_field :amount, placeholder: "0.00", step: 0.01, min: 0, required: true %>
   </div>
 
-  <div class="select-form">
-    <%= form.collection_select :category_id, current_user.categories, :id, :name, prompt: true %>
+  <div class="form-group">
+    <%= form.label :category_id, "Category" %>
+    <%= form.collection_select :category_id, current_user.categories, :id, :name, { prompt: "Select a category" }, required: true %>
   </div>
 
   <div class="button-form">
-    <%= form.submit :save%>
+    <%= form.submit payment.new_record? ? "Add Payment" : "Update Payment" %>
   </div>
 <% end %>
